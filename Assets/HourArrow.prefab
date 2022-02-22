@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3659269586377097770}
   - component: {fileID: 882709723019433120}
+  - component: {fileID: 2556173378756810246}
+  - component: {fileID: 2642250789657208351}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -82,6 +84,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2556173378756810246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4550133864892309969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851430a8e6dbcc74ca67ef0cb4c98c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 
+  number: 0
+  angle: 0
+  arrowBody: {fileID: 0}
+  rotationSpeed: 0
+--- !u!61 &2642250789657208351
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4550133864892309969}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &7407586524444090103
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +136,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6139473001753826490}
-  - component: {fileID: 4436346480790665697}
   m_Layer: 0
   m_Name: HourArrow
   m_TagString: Untagged
@@ -114,17 +158,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4436346480790665697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7407586524444090103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 851430a8e6dbcc74ca67ef0cb4c98c18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: hour
-  number: 0

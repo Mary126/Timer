@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 using SimpleJSON;
 
 public class TimeController : MonoBehaviour
@@ -10,8 +11,12 @@ public class TimeController : MonoBehaviour
     public int minute;
     public int hour;
     public int seconds;
+
+    public InputField minuteText;
+    public InputField hourText;
+    public InputField secondsText;
     public ClockController clock;
-    public void GetTime()
+    public void SetTime()
     {
         StartCoroutine(ProcessRequest(URL));
     }
@@ -28,25 +33,26 @@ public class TimeController : MonoBehaviour
             }
             else
             {
-                Destroy(clock.minuteArrow);
-                Destroy(clock.hourArrow);
-                Destroy(clock.secArrow);
                 JSONNode itemsData = JSON.Parse(request.downloadHandler.text);
                 minute = (int)itemsData["minute"];
                 hour = (int)itemsData["hour"];
                 seconds = (int)itemsData["seconds"];
-                clock.GenerateArrows(seconds, minute, hour);
+                clock.SetTime(seconds, minute, hour);
             }
         }
     }
-    private void ChangeTime()
+    public void DisplayTime()
     {
-        GetTime();
+        minuteText.text = minute.ToString();
+        hourText.text = hour.ToString();
+        secondsText.text = seconds.ToString();
     }
     private void Start()
     {
         clock = GetComponent<ClockController>();
-        GetTime();
-        InvokeRepeating("ChangeTime", 0.0f, 1.0f);
+        SetTime();
+    }
+    private void Update()
+    {
     }
 }
